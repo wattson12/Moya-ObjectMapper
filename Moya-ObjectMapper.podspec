@@ -22,21 +22,21 @@ Pod::Spec.new do |s|
 
   s.subspec "Core" do |ss|
     ss.source_files  = "Source/*.swift"
-    ss.dependency "Moya", "~> 6.4"
+    ss.dependency "Moya", :git => 'git@github.com:leonereveel/Moya.git', :branch => 'multipart-upload'
     ss.dependency "ObjectMapper", "~> 1.2"
     ss.framework  = "Foundation"
   end
 
   s.subspec "RxSwift" do |ss|
     ss.source_files = "Source/RxSwift/*.swift"
-    ss.dependency "Moya/RxSwift", "~> 6.4"
+    ss.dependency "Moya/RxSwift", :git => 'git@github.com:leonereveel/Moya.git', :branch => 'multipart-upload'
     ss.dependency "Moya-ObjectMapper/Core"
     ss.dependency "RxSwift", "~> 2.4"
   end
 
   s.subspec "ReactiveCocoa" do |ss|
     ss.source_files = "Source/ReactiveCocoa/*.swift"
-    ss.dependency "Moya/ReactiveCocoa", "~> 6.4"
+    ss.dependency "Moya/ReactiveCocoa", :git => 'git@github.com:leonereveel/Moya.git', :branch => 'multipart-upload'
     ss.dependency "Moya-ObjectMapper/Core"
     ss.dependency "ReactiveCocoa", "~> 4.1"
   end
