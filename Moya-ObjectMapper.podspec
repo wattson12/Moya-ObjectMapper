@@ -17,26 +17,26 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.10'
   s.watchos.deployment_target = '2.0'
   s.tvos.deployment_target = '9.0'
-  s.source       = { :git => "https://github.com/ivanbruel/Moya-ObjectMapper.git", :tag => s.version }
+  s.source       = { :git => "https://github.com/wattson12/Moya-ObjectMapper.git", :branch => 'sam/use_multi_part_form_branch_of_moya' }
   s.default_subspec = "Core"
 
   s.subspec "Core" do |ss|
     ss.source_files  = "Source/*.swift"
-    ss.dependency :git => 'git@github.com:leonereveel/Moya.git', :branch => 'multipart-upload'
+    ss.dependency "Moya"
     ss.dependency "ObjectMapper", "~> 1.2"
     ss.framework  = "Foundation"
   end
 
   s.subspec "RxSwift" do |ss|
     ss.source_files = "Source/RxSwift/*.swift"
-    ss.dependency "Moya/RxSwift", "~> 6.4"
+    ss.dependency "Moya/RxSwift"
     ss.dependency "Moya-ObjectMapper/Core"
     ss.dependency "RxSwift", "~> 2.4"
   end
 
   s.subspec "ReactiveCocoa" do |ss|
     ss.source_files = "Source/ReactiveCocoa/*.swift"
-    ss.dependency "Moya/ReactiveCocoa", "~> 6.4"
+    ss.dependency "Moya/ReactiveCocoa"
     ss.dependency "Moya-ObjectMapper/Core"
     ss.dependency "ReactiveCocoa", "~> 4.1"
   end
